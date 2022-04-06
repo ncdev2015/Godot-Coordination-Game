@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Poppins-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 23
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 23
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 30.1221
+margin_top = 94.8075
+margin_right = 310.122
+margin_bottom = 214.807
+custom_fonts/font = SubResource( 1 )
+text = "Coordination Game"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="."]
+margin_left = 45.5244
+margin_top = 260.461
+margin_right = 293.524
+margin_bottom = 307.461
+custom_fonts/font = SubResource( 2 )
+text = "hit all arrows"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 56.562
+margin_top = 503.958
+margin_right = 282.562
+margin_bottom = 543.958
+custom_fonts/font = SubResource( 3 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

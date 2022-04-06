@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/HitZone/HitZone.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/HitZone/ArrowsInLine.gd" type="Script" id=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 3.69891, -0.37265 )
+b = Vector2( 346.292, -0.364838 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 176.04, 13.8859 )
+
+[node name="HitZone" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ArrowZone" type="Area2D" parent="."]
+position = Vector2( -2.77861, 10 )
+
+[node name="Line2D" type="Line2D" parent="ArrowZone"]
+position = Vector2( 0.874849, 0 )
+scale = Vector2( 0.994187, 1 )
+points = PoolVector2Array( -0.401321, 477.472, 344.376, 477.472 )
+width = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowZone"]
+position = Vector2( -3.21428, 476.835 )
+shape = SubResource( 1 )
+
+[node name="DangerZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+position = Vector2( 170.679, 544.594 )
+shape = SubResource( 2 )
+
+[node name="ArrowsInLine" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[connection signal="area_entered" from="ArrowZone" to="." method="_on_ArrowZone_area_entered"]
+[connection signal="area_exited" from="ArrowZone" to="." method="_on_ArrowZone_area_exited"]
+[connection signal="area_entered" from="DangerZone" to="." method="_on_DangerZone_area_entered"]
