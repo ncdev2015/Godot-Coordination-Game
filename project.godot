@@ -14,9 +14,14 @@ config/name="Demo_HardcoreCoordination_Game"
 run/main_scene="res://Scenes/Menu/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Globals.gd"
+
 [display]
 
-window/size/width=342
+window/size/width=340
+window/size/resizable=false
 
 [physics]
 

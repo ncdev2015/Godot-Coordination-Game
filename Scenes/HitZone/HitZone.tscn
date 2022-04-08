@@ -21,6 +21,7 @@ position = Vector2( 0.874849, 0 )
 scale = Vector2( 0.994187, 1 )
 points = PoolVector2Array( -0.401321, 477.472, 344.376, 477.472 )
 width = 5.0
+default_color = Color( 1, 0, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowZone"]
 position = Vector2( -3.21428, 476.835 )
