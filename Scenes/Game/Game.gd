@@ -40,9 +40,12 @@ func _process(delta):
 			if $Arrows.get_child(0).isFast:
 				points += 1
 				
-			if points % 10 == 0 or (points > 0 and points % 11 == 0):
+			if points % 10 == 0 and not levelIncreased:
 				increaseLevel()
-			
+				levelIncreased = true
+			else:
+				if points % 11 == 0:
+					levelIncreased = false
 		else:
 			if points > 0:
 				points-=1
@@ -56,8 +59,12 @@ func _process(delta):
 			if $Arrows.get_child(0).isFast:
 				points += 1
 				
-			if points % 10 == 0 or (points > 0 and points % 11 == 0):
+			if points % 10 == 0 and not levelIncreased:
 				increaseLevel()
+				levelIncreased = true
+			else:
+				if points % 11 == 0:
+					levelIncreased = false
 		else:
 			if points > 0:
 				points-=1
